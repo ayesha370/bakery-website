@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Link } from 'react-router-dom' // Import Link from react-router-dom
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.jpg'
 
 function Header() {
@@ -10,7 +10,6 @@ function Header() {
     <Navbar expand='lg' className='bg-body-tertiary'>
       <Container>
         <Link to='/'>
-          {/* Use Link component instead of Navbar.Brand href */}
           <Navbar.Brand>
             <img
               src={logo}
@@ -26,18 +25,33 @@ function Header() {
 
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link as={Link} to='/'>
+          <Nav className='ms-auto'>
+            <Nav.Link
+              as={Link}
+              to='/'
+              style={{ fontSize: '18px', margin: '0 15px', fontWeight: 'bold' }}
+            >
               Home
             </Nav.Link>
-            {/* Use Link component for navigation */}
-            <Nav.Link as={Link} to='/menu'>
+            <Nav.Link
+              as={Link}
+              to='/menu'
+              style={{ fontSize: '18px', margin: '0 15px', fontWeight: 'bold' }}
+            >
               Menu
             </Nav.Link>
-            <Nav.Link as={Link} to='/about'>
+            <Nav.Link
+              as={Link}
+              to='/about'
+              style={{ fontSize: '18px', margin: '0 15px', fontWeight: 'bold' }}
+            >
               About Us
             </Nav.Link>
-            <Nav.Link as={Link} to='/contact'>
+            <Nav.Link
+              as={Link}
+              to='/contact'
+              style={{ fontSize: '18px', margin: '0 15px', fontWeight: 'bold' }}
+            >
               Contact
             </Nav.Link>
           </Nav>
